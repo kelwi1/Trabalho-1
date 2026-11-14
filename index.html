@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07152f">
+  <title>AutoPrime | Seu carro sempre em boas mãos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="AutoPrime início">
+      <span class="brand-mark">🚘</span><span>Auto<span>Prime</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio" class="nav-link active" data-page="inicio">Início</a>
+      <a href="#servicos" class="nav-link" data-page="servicos">Serviços</a>
+      <a href="#agendamento" class="nav-link" data-page="agendamento">Agendamento</a>
+      <a href="#acompanhar" class="nav-link" data-page="acompanhar">Acompanhar</a>
+      <a href="#perfil" class="nav-link" data-page="perfil">Meu perfil</a>
+    </nav>
+    <button class="login-top" data-go="login">Entrar</button>
+  </header>
+
+  <main>
+    <section class="page active" id="inicio">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">CUIDADO AUTOMOTIVO ESPECIALIZADO</div>
+          <h1>Cuide do seu carro<br>com quem entende!</h1>
+          <p>Serviços de qualidade, agendamento rápido e atendimento especializado para você dirigir com tranquilidade.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-go="agendamento">Agendar serviço <span>→</span></button>
+            <button class="btn ghost" data-go="servicos">Conhecer serviços</button>
+          </div>
+          <div class="hero-proof"><span>✓</span> Equipe especializada <span>·</span> Peças de qualidade <span>·</span> Transparência</div>
+        </div>
+        <div class="hero-car" aria-hidden="true">
+          <div class="glow"></div><div class="car-emoji">🚘</div>
+          <div class="hero-card"><strong>AutoPrime</strong><small>Seu carro sempre em boas mãos.</small></div>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-icon">🔧</span><div><h3>Agendamento facilitado</h3><p>Marque seu serviço em poucos cliques.</p></div></article>
+        <article class="feature"><span class="feature-icon">🛡️</span><div><h3>Serviço confiável</h3><p>Profissionais preparados e peças de qualidade.</p></div></article>
+        <article class="feature"><span class="feature-icon">🕒</span><div><h3>Acompanhe em tempo real</h3><p>Saiba o status do seu atendimento.</p></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="servicos">
+      <div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Nossos serviços</h2><p>Tudo o que seu carro precisa, em um só lugar.</p></div></div>
+      <div class="service-grid" id="serviceGrid">
+        <button class="service-card" data-service="Troca de Óleo"><span>🛢️</span><b>Troca de Óleo</b><small>Lubrificação e filtros</small></button>
+        <button class="service-card" data-service="Revisão Completa"><span>⚙️</span><b>Revisão Completa</b><small>Check-up do veículo</small></button>
+        <button class="service-card" data-service="Freios"><span>⭕</span><b>Freios</b><small>Segurança em primeiro lugar</small></button>
+        <button class="service-card" data-service="Suspensão"><span>〰️</span><b>Suspensão</b><small>Estabilidade e conforto</small></button>
+        <button class="service-card" data-service="Ar-condicionado"><span>❄️</span><b>Ar-condicionado</b><small>Climatização</small></button>
+        <button class="service-card" data-service="Diagnóstico Eletrônico"><span>🖥️</span><b>Diagnóstico Eletrônico</b><small>Leitura e avaliação</small></button>
+      </div>
+      <div class="service-banner"><div><h3>Qualidade e segurança em cada detalhe.</h3><p>Conte com a AutoPrime para cuidar do seu veículo.</p></div><span>🚘</span></div>
+    </section>
+
+    <section class="page" id="agendamento">
+      <div class="section-heading"><div><span class="eyebrow">RESERVE SEU HORÁRIO</span><h2>Agendamento</h2><p>Escolha o serviço, a data e o horário ideal para você.</p></div></div>
+      <div class="booking-layout">
+        <div class="panel">
+          <label for="serviceSelect">Selecione o serviço</label>
+          <select id="serviceSelect">
+            <option>Troca de Óleo</option><option>Revisão Completa</option><option>Freios</option><option>Suspensão</option><option>Ar-condicionado</option><option>Diagnóstico Eletrônico</option>
+          </select>
+          <div class="calendar-head"><button id="prevMonth" aria-label="Mês anterior">‹</button><strong id="monthLabel"></strong><button id="nextMonth" aria-label="Próximo mês">›</button></div>
+          <div class="calendar" id="calendar"></div>
+          <label class="block-label">Horários disponíveis</label>
+          <div class="time-slots" id="timeSlots">
+            <button>08:00</button><button>09:00</button><button>10:00</button><button>14:00</button><button>15:00</button><button>16:00</button>
+          </div>
+          <button class="btn primary full" id="confirmBooking">Confirmar agendamento</button>
+          <p class="hint" id="bookingHint">Selecione uma data e um horário para continuar.</p>
+        </div>
+        <aside class="booking-aside">
+          <div class="aside-icon">📅</div><h3>Seu próximo cuidado começa aqui.</h3><p>Escolha um horário disponível e deixe o resto com a nossa equipe.</p>
+          <ul><li>✓ Atendimento especializado</li><li>✓ Confirmação imediata</li><li>✓ Acompanhamento do serviço</li></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page" id="confirmacao">
+      <div class="success-panel">
+        <div class="success-icon">✓</div><span class="eyebrow">TUDO CERTO!</span><h2>Agendamento realizado!</h2>
+        <p>Seu atendimento foi agendado com sucesso.</p>
+        <div class="booking-summary" id="bookingSummary"></div>
+        <button class="btn primary" data-go="acompanhar">Acompanhar serviço</button>
+        <button class="btn text-btn" data-go="inicio">Voltar para o início</button>
+      </div>
+    </section>
+
+    <section class="page" id="acompanhar">
+      <div class="section-heading"><div><span class="eyebrow">STATUS DO VEÍCULO</span><h2>Acompanhar serviço</h2><p>Veja as etapas do atendimento do seu veículo.</p></div></div>
+      <div class="tracking-panel">
+        <div class="timeline">
+          <div class="step done"><span>✓</span><div><b>Agendamento realizado</b><small id="trackDate">Data e horário confirmados</small></div></div>
+          <div class="step current"><span>2</span><div><b>Em atendimento</b><small>Seu carro está sendo verificado.</small></div></div>
+          <div class="step"><span>3</span><div><b>Em reparo</b><small>Aguardando avaliação técnica.</small></div></div>
+          <div class="step"><span>4</span><div><b>Concluído</b><small>Você será avisado quando estiver pronto.</small></div></div>
+        </div>
+        <div class="delivery"><span>🚘</span><div><b>Previsão de entrega</b><p>Será atualizada após a avaliação do veículo.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="perfil">
+      <div class="section-heading"><div><span class="eyebrow">SUA CONTA</span><h2>Meu perfil</h2></div></div>
+      <div class="profile-panel">
+        <div class="avatar">👤</div><h3 id="profileName">Visitante</h3><p id="profileEmail">Entre para acessar seus dados</p>
+        <div class="profile-menu">
+          <button data-go="agendamento">▦ <span>Meus agendamentos</span> <b>›</b></button>
+          <button data-go="veiculos">🚘 <span>Meus veículos</span> <b>›</b></button>
+          <button data-go="notificacoes">♧ <span>Notificações</span> <b>›</b></button>
+          <button data-go="configuracoes">⚙ <span>Configurações</span> <b>›</b></button>
+          <button data-go="ajuda">ⓘ <span>Ajuda e suporte</span> <b>›</b></button>
+          <button id="logoutBtn">⇥ <span>Sair</span> <b>›</b></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="login">
+      <div class="login-panel"><a class="brand big-brand" href="#inicio"><span class="brand-mark">🚘</span><span>Auto<span>Prime</span></span></a><h2>Faça login para continuar</h2>
+        <form id="loginForm"><input id="loginEmail" type="email" placeholder="E-mail ou usuário" required><input id="loginPassword" type="password" placeholder="Senha" required><button class="btn primary full">Entrar</button></form>
+        <p class="login-note">Esta é uma demonstração: use qualquer e-mail e senha.</p><p>Não tem uma conta? <a href="#" id="registerLink">Cadastre-se</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">🚘</span><span>Auto<span>Prime</span></span></a><p>© <span id="year"></span> AutoPrime. Cuidando do seu carro com excelência.</p></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
